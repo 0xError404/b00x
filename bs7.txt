@@ -1,0 +1,79 @@
+## Error 404 team 511 ##
+
+htaccess safe mode on public
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+
+</IfModule>
+
+ErrorDocument 404 https://fahadipa.com/404
+
+OPTIONS -INDEXES
+
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^([A-Z-]+)$ API/web.php?ud_id=&get_alerts=$1
+    
+    RewriteRule ^admin/get_support/([0-9]+)$ admin/edit_support.php?id=$1 [L]
+
+    RewriteRule ^admin/plugin/(.*)$ admin/Plugin.php?Location=$1 [L]
+    
+    RewriteRule ^admin/documentation/(.*)$ admin/help_center.php?post=$1 [L]
+    
+    RewriteRule ^admin/GetStore/(.*)$ admin/Store.php?post=$1 [L]
+    
+    RewriteRule ^admin/EditStore/(.*)$ admin/Store.php?id=$1&post=EditStore [L]
+    
+    RewriteRule ^admin/producer/([0-9]+)$ admin/edit_shop.php?id=$1 [L]
+         
+    RewriteRule ^admin/page/([0-9]+)$ admin/Edits-pages.php?id=$1 [L]
+            
+    RewriteRule ^admin/user/([0-9]+)$ admin/edit_enabled.php?id=$1 [L]
+        
+    RewriteRule ^admin/application/([0-9]+)$ admin/edit_app.php?id=$1 [L]
+    
+    RewriteRule ^admin/section/([0-9]+)$ admin/show-Edit-sections.php?id=$1 [L]
+    
+    RewriteRule ^admin/category/([0-9]+)$ admin/edit_category.php?id=$1 [L]
+    
+    RewriteRule ^admin/edit_user/([0-9]+)$ admin/Edit-user.php?id=$1 [L]
+       
+    RewriteRule ^admin/Coupon/(.*)$ admin/coupon.php?coupon=$1 [L]
+    
+    RewriteRule ^admin/edit_ReplyMessages/([0-9]+)$ admin/edit_ReplyMessages_bot.php?id=$1 [L]
+    
+    RewriteRule ^s/(.*)$ System/url.php?code=$1 [L]
+    
+    RewriteRule ^app.ipa admin/FilesIPA/Application/Application.ipa [L]
+    
+    RewriteRule ^Blogs/([0-9]+)$ Blog.php?id=$1 [L]
+    
+    RewriteRule ^app/([a-z]+)$ Apps.php?Order=$1 [L]
+    
+    RewriteRule ^UserInformation/(.*)/([0-9]+)$ Shop.php?get=$1&id=$2 [L]
+    
+    RewriteRule ^CodeInformation/(.*)$ Shop.php?transactionNo=$1 [L]
+    
+    RewriteRule ^Links Short.php?get=Links [L]
+        
+    RewriteRule ^Privacy_Policy/(.*)$ PrivacyPolicy.php?GetSession=$1 [L]
+</IfModule>
+
+<files db.php>
+order allow,deny
+deny from all
+</files>
+
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
