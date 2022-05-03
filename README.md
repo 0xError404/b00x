@@ -1,30 +1,20 @@
 # Project Title
 
-LFI Hunter
+LFI 0xError
 
 ## Description
 
-A Local File Inclusion finder.
-
-## Getting Started
-
-### Executing program
-
-* With python3 for UNIX
+used for linux 
 ```
-python3 lfi_hunter.py -u 'http://lfi.location/example.php?parameter=' -w unix.txt -os win -o output.txt
+python3 lfi_hunter.py -u 'http://error.404/example.php?parameter=' -w linux.txt -os win -o output.txt
+
+used for Win
 ```
-* With python3 for Windows
-```
-python3 lfi_hunter.py -u 'http://lfi.location/example.php?parameter=' -w win.txt -os win -o output.txt
+python3 lfi_hunter.py -u 'http://error.404/example.php?parameter=' -w win.txt -os win -o output.txt
 ```
 
-## Help
 
-For help menu:
-```
-python3 lfi_hunter.py -h
+python3 lfi_hunter.py -h  ---->  used for help 
 ```
 
-## Disclaimer
-All the code provided on this repository is for educational/research purposes only. Any actions and/or activities related to the material contained within this repository is solely your responsibility. The misuse of the code in this repository can result in criminal charges brought against the persons in question. Author will not be held responsible in the event any criminal charges be brought against any individuals misusing the code in this repository to break the law.
+powered by 0xEror404
